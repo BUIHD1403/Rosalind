@@ -1,0 +1,15 @@
+import math
+
+# Using binomial distribution, reference: https://georginalesliedotcom.wordpress.com/2020/09/28/independent-alleles-part-one/
+# http://saradoesbioinformatics.blogspot.com/2016/07/independent-alleles.html
+
+input_val = input().split()
+generations = int(input_val[0])
+limit_amount = int(input_val[1])
+res = 0 
+total_child = 2 ** generations
+
+for i in range(limit_amount, (total_child+1)):
+    res += math.comb(total_child, i) * (0.25 ** i) * (0.75 ** (total_child - i))
+
+print(f'res: {float(res)}')
