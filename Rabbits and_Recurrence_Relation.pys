@@ -1,0 +1,10 @@
+def fibonacci(n, k):
+    first_term = 0
+    second_term = 1
+    for i in range(n):
+        temp = first_term
+        first_term = second_term
+        second_term = temp + second_term * k
+    return first_term
+res = fibonacci(5, 3)
+print(f"res : {res}")
